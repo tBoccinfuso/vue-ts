@@ -47,6 +47,13 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import HelloworldLink from '@/classes/HelloworldLink';
+
+// Create new instances of links
+const babelItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel', 'babel');
+const tsItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript', 'typescript');
+const pwaItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa', 'pwa');
+const pugItem = new HelloworldLink('https://pugjs.org/api/getting-started.html', 'pug');
 
 @Component
 export default class HelloWorld extends Vue {
