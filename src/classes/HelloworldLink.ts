@@ -1,13 +1,21 @@
-export default class SearchParameters {
+export default class HelloworldLink {
   public text: string;
   public href: string;
   /**
    *
-   * @param href
-   * @param text
+   * @param config
+   * @param filters
    */
   constructor(href: string, text: string) {
     this.href = href;
     this.text = text;
+  }
+
+  generateLink() {
+    return this.href;
+  }
+
+  printText() {
+    return this.text;
   }
 }

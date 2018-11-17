@@ -4,19 +4,13 @@
     p
       | For a guide and recipes on how to configure / customize this project,
       br
-      |       check out the
+      |       check out the 
       a(href='https://cli.vuejs.org', target='_blank', rel='noopener') vue-cli documentation
       | .
     h3 Installed CLI Plugins
     ul
-      li
-        a(href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel', target='_blank', rel='noopener') babel
-      li
-        a(href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript', target='_blank', rel='noopener') typescript
-      li
-        a(href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa', target='_blank', rel='noopener') pwa
-      li
-        a(href='https://pugjs.org/api/getting-started.html', target='_blank', rel='noopener') pug
+      li(v-for='link in links')
+        a(:href='link.generateLink()' target='_blank') {{ link.printText() }}
 
         
     h3 Essential Links
@@ -49,15 +43,20 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import HelloworldLink from '@/classes/HelloworldLink';
 
-// Create new instances of links
-const babelItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel', 'babel');
-const tsItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript', 'typescript');
-const pwaItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa', 'pwa');
-const pugItem = new HelloworldLink('https://pugjs.org/api/getting-started.html', 'pug');
-
 @Component
 export default class HelloWorld extends Vue {
+  
+  private babelItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel', 'babel');
+  private tsItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript', 'typescript');
+  private pwaItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa', 'pwa');
+  private pugItem = new HelloworldLink('https://pugjs.org/api/getting-started.html', 'pug');
+  private links: HelloworldLink[] = [];
+
   @Prop() private msg!: string;
+
+  private mounted() {
+    this.links.push(this.babelItem, this.tsItem, this.pwaItem, this.pugItem);
+  }
 }
 </script>
 
