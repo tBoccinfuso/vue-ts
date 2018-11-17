@@ -3,9 +3,8 @@ export default class SearchParameters {
   public href: string;
   /**
    *
-   * @param config
-   * @param filters
-   * @param listingData
+   * @param href
+   * @param text
    */
   constructor(href: string, text: string) {
     this.href = href;
