@@ -3,8 +3,8 @@ export default class HelloworldLink {
   public href: string;
   /**
    *
-   * @param config
-   * @param filters
+   * @param href
+   * @param text
    */
   constructor(href: string, text: string) {
     this.href = href;
