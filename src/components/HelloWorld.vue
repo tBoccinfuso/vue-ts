@@ -45,7 +45,6 @@ import HelloworldLink from '@/classes/HelloworldLink';
 
 @Component
 export default class HelloWorld extends Vue {
-  
   private babelItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel', 'babel');
   private tsItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript', 'typescript');
   private pwaItem = new HelloworldLink('https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa', 'pwa');

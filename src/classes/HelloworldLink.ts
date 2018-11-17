@@ -11,11 +11,11 @@ export default class HelloworldLink {
     this.text = text;
   }
 
-  generateLink() {
+  public generateLink() {
     return this.href;
   }
 
-  printText() {
+  public printText() {
     return this.text;
   }
 }

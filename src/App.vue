@@ -3,10 +3,11 @@
     Header(creator='Thomas Boccinfuso')
     #nav
       router-link(to='/') Home
-      |  |
-      router-link(to='/about') About
+      |  | 
+      router-link(to='/nauts') Nauts
     router-view
 </template>
+
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 import Header from '@/components/Header.vue';
@@ -19,7 +20,6 @@ import Header from '@/components/Header.vue';
 
 export default class App extends Vue {}
 </script>
-
 
 <style lang="scss">
 #app {
